@@ -163,11 +163,17 @@ def info_opt(m):
             bot.send_message(cid, "  [i]   Usado: %s" % cpu)
             print(color.GREEN + " [i] Usado: %s" % cpu + color.ENDC)
             
+            
+            
         elif txt == "PING":
             bot.send_message(cid, "[+] PING...")
             print(color.BLUE + "[+] PING..." + color.ENDC)
-            ping = os.system("ping www.micentinela.com")
-            bot.send_message(cid, "  [i]   Usado: %s" % ping)
+            ping = os.system("ping -c 4 www.micentinela.com")
+            bot.send_message(cid, "  [i]   Ping: ..." % ping)
+            print(color.GREEN + " [i] Ping: ..." % ping + color.ENDC)
+            
+            
+            
         elif txt == "IFCONFIG":
             os.system("ifconfig")
 
