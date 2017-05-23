@@ -6,7 +6,7 @@ from telebot import types
 import time
 import os
 
-TOKEN = "TOKENSSSSSSSSS"  # SUSTITUIR
+TOKEN = "347644672:AAHu5fbP7ot0p98XJLwEUiv-ZH_Trwm9Ybo"
 
 userStep = {}
 knownUsers = []
