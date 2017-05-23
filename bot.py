@@ -27,6 +27,7 @@ cam_menu.add("Atras")
 info_menu = types.ReplyKeyboardMarkup()
 info_menu.add("TEMP", "HD")
 info_menu.add("RAM", "CPU")
+info_menu.add("PING", "IFCONFIG")
 info_menu.add("Atras")
 
 
@@ -161,6 +162,15 @@ def info_opt(m):
             cpu = os.popen('mpstat | grep -A 5 "%idle" | tail -n 1 | awk -F " " \'{print 100 - $ 12}\'a').read()
             bot.send_message(cid, "  [i]   Usado: %s" % cpu)
             print(color.GREEN + " [i] Usado: %s" % cpu + color.ENDC)
+            
+        elif txt == "PING":
+            bot.send_message(cid, "[+] PING...")
+            print(color.BLUE + "[+] PING..." + color.ENDC)
+            os.system("ping www.micentinela.com")
+        elif txt == "IFCONFIG":
+            os.system("ifconfig")
+
+
         elif txt == "Atras":  # ATRAS
             userStep[cid] = 0
             bot.send_message(cid, "Menu Principal:", reply_markup=menu)
