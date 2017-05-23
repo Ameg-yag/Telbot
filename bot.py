@@ -89,7 +89,7 @@ def command_help(m):
 @bot.message_handler(commands=['exec'])
 def command_exec(m):
     cid = m.chat.id
-    if cid == "ID":  # SUSTITUIR
+    if cid == "7506285":  # SUSTITUIR
         bot.send_message(cid, "Ejecutando: " + m.text[len("/exec"):])
         bot.send_chat_action(cid, 'typing')
         time.sleep(2)
