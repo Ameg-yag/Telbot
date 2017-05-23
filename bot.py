@@ -169,7 +169,7 @@ def info_opt(m):
             bot.send_message(cid, "[+] PING...")
             print(color.BLUE + "[+] PING..." + color.ENDC)
             ping = os.system("ping -c 4 www.micentinela.com")
-            bot.send_message(cid, open(ping))
+            bot.send_message(cid, ping)
             #print(color.GREEN + " [ii] Usado: %s" % ping + color.ENDC)
 
             
