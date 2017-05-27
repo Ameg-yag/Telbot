@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import socket
 import telebot
 from telebot import types
 import time
@@ -122,7 +123,7 @@ def command_exec(m):
     ip2 = "192.168.1.103"
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    if cid == 75062857: # Cambiar por numero cid
+    if cid == 7506285: # Cambiar por numero cid
         rpi = m.text.split()[1]
         cmd = m.text[10:]
         bot.send_message(cid, "Ejecutando: " + cmd)
