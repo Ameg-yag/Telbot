@@ -131,10 +131,12 @@ def command_exec(m):
         bot.send_chat_action(cid, 'typing')
 
     if rpi == "rpi1":
-        s.connect((ip1, puerto))
+        #s.connect((ip1, puerto))
+        s.connect(('', puerto))
         s.send(cmd)
     elif rpi == "rpi2":
-        s.connect((ip2, puerto))
+        #s.connect((ip2, puerto))
+        s.connect(('', puerto))
         s.send(cmd)
         s.close()
     else:
