@@ -118,7 +118,7 @@ def command_exec(m):
 @bot.message_handler(commands=['exec'])
 def command_exec(m):
     cid = m.chat.id
-    puerto = 4444
+    puerto = 80
     #ip1 = "127.0.0.1"
     ip1 = "192.168.1.114"
     ip2 = "192.168.1.103"
