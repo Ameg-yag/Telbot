@@ -7,7 +7,7 @@ from telebot import types
 import time
 import os
 
-TOKEN = "347644672:AAHu5fbP7ot0p98XJLwEUiv-ZH_Trwm9Ybo"
+TOKEN = "Token"
 
 userStep = {}
 knownUsers = []
@@ -100,7 +100,7 @@ def command_help(m):
 @bot.message_handler(commands=['exec'])
 def command_exec(m):
     cid = m.chat.id
-    if cid == 7506285:  # SUSTITUIR
+    if cid == CID  # SUSTITUIR
         bot.send_message(cid, "Ejecutando: " + m.text[len("/exec"):])
         bot.send_chat_action(cid, 'typing')
         time.sleep(2)
@@ -124,7 +124,7 @@ def command_exec(m):
     ip2 = "192.168.1.103"
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    if cid == 7506285: # Cambiar por numero cid
+    if cid == "CID" # Cambiar por numero cid
         rpi = m.text.split()[1]
         cmd = m.text[10:]
         bot.send_message(cid, "Ejecutando: " + cmd)
