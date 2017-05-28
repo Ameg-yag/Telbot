@@ -4,9 +4,9 @@
 import socket
 import os
 import telebot
-TOKEN = "347644672:AAHu5fbP7ot0p98XJLwEUiv-ZH_Trwm9Ybo" # Cambiar por el token
+TOKEN = "TOKEN" # Cambiar por el token
 bot = telebot.TeleBot(TOKEN)
-cid = "7506285" # Cambiar por el numero cid
+cid = "CID" # Cambiar por el numero cid
 #ip = "192.168.1.103"
 puerto = 80
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
