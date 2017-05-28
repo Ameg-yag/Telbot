@@ -118,9 +118,9 @@ def command_exec(m):
 @bot.message_handler(commands=['exec'])
 def command_exec(m):
     cid = m.chat.id
-    puerto = 80
-    #ip1 = "127.0.0.1"
-    ip1 = "192.168.1.114"
+    puerto = 4444
+    ip1 = "127.0.0.1"
+    #ip1 = "192.168.1.114"
     ip2 = "192.168.1.103"
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -131,12 +131,12 @@ def command_exec(m):
         bot.send_chat_action(cid, 'typing')
 
     if rpi == "rpi1":
-        #s.connect((ip1, puerto))
-        s.connect(('', puerto))
+        s.connect((ip1, puerto))
+        #s.connect(('', puerto))
         s.send(cmd)
     elif rpi == "rpi2":
-        #s.connect((ip2, puerto))
-        s.connect(('', puerto))
+        s.connect((ip2, puerto))
+        #s.connect(('', puerto))
         s.send(cmd)
         s.close()
     else:
@@ -145,24 +145,7 @@ def command_exec(m):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 ####################################################################################
 ####################################################################################
 
