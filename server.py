@@ -88,12 +88,8 @@ def command_help(m):
 
 
 
-
-
 ####################################################################################
 ####################################################################################
-
-
 
 """
 # EXEC COMANDO
@@ -124,20 +120,20 @@ def command_exec(m):
     ip2 = "192.168.1.103"
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    if cid == "CID" # Cambiar por numero cid
+    if cid == "CID": # Cambiar por numero cid
         rpi = m.text.split()[1]
         cmd = m.text[10:]
         bot.send_message(cid, "Ejecutando: " + cmd)
         bot.send_chat_action(cid, 'typing')
 
-    if rpi == "rpi1":
-        s.connect((ip1, puerto))
-        #s.connect(('', puerto))
-        s.send(cmd)
-    elif rpi == "rpi2":
-        s.connect((ip2, puerto))
-        #s.connect(('', puerto))
-        s.send(cmd)
+        if rpi == "rpi1":
+            s.connect((ip1, puerto))
+            #s.connect(('', puerto))
+            s.send(cmd)
+        elif rpi == "rpi2":
+            s.connect((ip2, puerto))
+            #s.connect(('', puerto))
+            s.send(cmd)
         s.close()
     else:
         bot.send_message(cid, " ¡¡PERMISO DENEGADO!!")
@@ -213,19 +209,17 @@ def info_opt(m):
             print(color.GREEN + " [i] Usado: %s" % cpu + color.ENDC)
             
             
-            
         elif txt == "PING":
             bot.send_message(cid, "[+] PING...")
             print(color.BLUE + "[+] PING..." + color.ENDC)
-            ping = os.system("ping -c 4 www.google.com")
+            ping = os.popen("ping -c 4 www.google.com").read()
             bot.send_message(cid, ping)
-            #print(color.GREEN + " [ii] Usado: %s" % ping + color.ENDC)
+            #print(color.GREEN + " [i] Usado: %s" % ping + color.ENDC)
 
             
-            
-            
         elif txt == "IFCONFIG":
-            os.system("ifconfig")
+            out = os.popen("ifconfig").read()
+            bot.send_message(cid, out)
 
 
         elif txt == "Atras":  # ATRAS
